@@ -1,34 +1,45 @@
-There are many ways to collaborate using git or in our case github
-(skip to the last one if you don't care about the others)
+There are many ways to collaborate using git or in our case github,
+this document covers a few common ones. We assume you know a little
+bit of git, and we'll skip the magic how to set up a git repository.
 
-1) directly clone the owner's repo and push back into it.
-   This is dangerous, needs special permission from the owner
-   but is a very simple sequency of commands, and not too different
-   for those used to CVS and SVN
+We first need to set some nomenclature:
+ - users                  (u1, u2, ...)
+ - repositories or repo   (r1, r2, ...)
+ - files                  (f1, f2, ...)
+ - branches               (b1, b2, ...) 
 
-	git clone https://github.com/astroumd/demo  demo_astroumd
-	cd demo_astroumd
+1) directly clone a repo and push back into it.
+   This is officially dangerous, it also needs special permission
+   from the owner but is the most simple sequence of commands,
+   and not too different for those used to CVS and SVN.
+
+	git clone https://github.com/u1/r1
+	cd r1
 	$EDITOR f1
+	git add f1
         git commit f1
         git push
 
-   This is the typical work if you work on your own repo.
+   This is the typical work if you work on your own repo and you just
+   want to use it like a backup device.
+
+   You can also use it on your own department machine and/or laptop,
+   using ssh keys and bypass github.com alltogether.
 
 2) A variation on this theme is using a branch, so they could be more safely
    merged into the master. So, instead of editing 'f1' in the master, we
-   create a branch and make changes on that:
+   create a branch and make changes on that branch instead
+   (you will often hear developers say "leave the master clean")
 
-
-   	git branch b1
-	git checkout b1
+	git checkout -b b1         # create new branch, and switch to it
 	$EDITOR f1
 	git commit f1
-	git push                   # skip this if you want it only local
+	git push -u origin b1      # skip this if you want to keep it local
 
    When it comes time to merge, the following sequence can be followed
 
-   	git checkout master        # start from a fresh master
-	git pull
+   	git checkout master        # switch to master
+	git pull                   # make sure it's clean
 	git merge b1               # merge in the b1 changes, watch for conflicts
 	git push                   # push this back to github
 
