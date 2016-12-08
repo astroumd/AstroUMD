@@ -43,5 +43,5 @@ permissions.
 
 * After a ***git clone*** it doesn't seem to see other branches until you've been there?   (***git branch -r*** will list remote branches)
 
-* If you delete a file, git will be upset. ***git checkout -- file***
+* If you delete a file, git will be upset. ***git checkout -- file***  to get it back.
 
