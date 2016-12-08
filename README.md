@@ -1,6 +1,6 @@
 # AstroUMD
 
-Introduction to the use of the github AstroUMD organization. 
+Introduction to the use of the github AstroUMD organization. A top level documentation tree is also on GitHub Pages: https://astroumd.github.io/
 
 
 ## GIT for CVS users
