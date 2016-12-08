@@ -51,7 +51,7 @@ We first need to set some nomenclature:
    	1) go on GITHUB and fork the repo to your space
 	   (see the fork button top right)
 	   
-	   https://github.com/astroumd/demo
+	   https://astroumd/demo
 
 
 	2) now on your laptop get your own version (as "teuben") where you edit
@@ -105,4 +105,16 @@ We first need to set some nomenclature:
 The 'astropy' project has a nice writeup about their workflow:
 
 http://docs.astropy.org/en/stable/development/workflow/development_workflow.html
+
+
+
+*) lets say you have edited a file in the master, and realize it should have been done on a branch.
+   Here's one way, with file 'f1' and branch name 'b1':
+
+   mkdir tmp
+   mv f1 tmp
+   git checkout -- f1
+   git checkout -b b1
+   mv tmp/f1 .
+   rmdir tmp
 
